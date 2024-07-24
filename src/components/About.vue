@@ -12,7 +12,8 @@
           :content="section.content"
         />
       </div>
-    </div>
+    </div><!-- page-content -->
+    <p>This website is a project for the course "Introduction to Cryosphere Science" at the University of California, Berkeley.</p>
     <SideBar class="sidebar" />
   </div>
 </template>
