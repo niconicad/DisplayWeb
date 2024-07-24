@@ -11,6 +11,7 @@
         </div>
       </div>
       <div class="header-right">
+
         <a href="#" class="contact-us">联系我们</a>
         <div class="search-bar">
           <input type="text" placeholder="搜索..." />
@@ -21,7 +22,7 @@
     <nav>
       <router-link to="/">主页</router-link>
       <router-link to="/about">关于</router-link>
-      <router-link to="/climate-data">气候数据</router-link>
+      <router-link to="/articles">文章</router-link>
       <router-link to="/tools-methods">工具与方法</router-link>
       <router-link to="/network-experts">专家网络</router-link>
       <router-link to="/updates">更新</router-link>

@@ -27,16 +27,18 @@ body {
   margin: 0;
   padding: 0;
   background-color: #f4f4f4;
+  min-height: 100vh;
 }
 
 .content {
   width: 100%;
+  min-height: 80vh;
 }
 .app{
 
   flex-direction: column;
   min-height: 100vh;
-
   display: flex;
 }
+
 </style>

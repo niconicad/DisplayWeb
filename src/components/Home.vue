@@ -9,44 +9,84 @@
     </div>
 
     <div class="content">
-      <div class="word-section">
-        <div class="word-block">
-        <div class="quote-section">
-          <p class="quote">"One golden observation is worth a thousand simulations."</p>
+      <div class="word-picture-container">
+        <div class="word-section">
+          <div class="word-block">
+          <div class="quote-section">
+            <p class="quote">"One golden observation is worth a thousand simulations."</p>
 
+          </div>
+            <p class="author">- from the Ten Extra Commandments for Climate Modeling by J.E. Kutzbach</p>
+          <div class="welcome-section">
+            <p class="welcome">Welcome to the <span class="highlight">Climate Data Guide</span>!</p>
+            <p class="description">
+              The Climate Data Guide (or "Guide") is an expert knowledge portal providing concise and reliable information on the strengths and limitations of the climate data that are essential for measuring and predicting physical climate risk.
+            </p>
+            <p class="description">
+              The Guide publishes data summaries with access links, intercomparisons, and expert commentaries on the utility of climate data for addressing a wide variety of questions in climate science.
+            </p>
+            <p class="description">
+              The Guide has helped over a million readers from around the world gain an insider's perspective on data ranging from AI-generated precipitation data to state-of-the-art data assimilation products (e.g. reanalysis) to paleoclimate records from tree rings and corals.
+            </p>
+          </div>
+            <div class="learn-more-link">
+            <router-link>LEARN MORE ></router-link>
+            </div>
+          </div>
         </div>
-          <p class="author">- from the Ten Extra Commandments for Climate Modeling by J.E. Kutzbach</p>
-        <div class="welcome-section">
-          <p class="welcome">Welcome to the <span class="highlight">Climate Data Guide</span>!</p>
-          <p class="description">
-            The Climate Data Guide (or "Guide") is an expert knowledge portal providing concise and reliable information on the strengths and limitations of the climate data that are essential for measuring and predicting physical climate risk.
-          </p>
-          <p class="description">
-            The Guide publishes data summaries with access links, intercomparisons, and expert commentaries on the utility of climate data for addressing a wide variety of questions in climate science.
-          </p>
-          <p class="description">
-            The Guide has helped over a million readers from around the world gain an insider's perspective on data ranging from AI-generated precipitation data to state-of-the-art data assimilation products (e.g. reanalysis) to paleoclimate records from tree rings and corals.
-          </p>
-        </div>
-          <div class="learn-more-link">
-          <router-link>LEARN MORE ></router-link>
+        <div class="picture-section">
+          <div class="image-container">
+            <img src="@/assets/dataConfidence4.png" alt="20CRv2c" />
           </div>
         </div>
       </div>
-      <div class="picture-section">
-        <div class="image-container">
-          <img src="@/assets/dataConfidence4.png" alt="20CRv2c" />
+      </div>
+      <div class="two-module">
+        <div class="module-left">
+          <div class="module-picture">
+            <router-link to="/data-summary">
+              <img src="@/assets/two.png" alt="Data Summary" />
+            </router-link>
+          </div>
+          <div class="module-title">
+              <router-link to="/data-summary">
+                <h2>Data Summary</h2>
+              </router-link>
+          </div>
+          <div class="module-description">
+            <p>We seek climate and data scientists who want to break information silos and build collective wisdom about climate data and its applications.</p>
+          </div>
+        </div>
+        <div class="module-right">
+          <div class="module-picture">
+            <router-link to="/data-summary">
+              <img src="@/assets/two.png" alt="Data Summary" />
+            </router-link>
+          </div>
+          <div class="module-title">
+              <router-link to="/data-summary">
+                <h2>Data Summary</h2>
+              </router-link>
+          </div>
+          <div class="module-description">
+            <p>We seek climate and data scientists who want to break information silos and build collective wisdom about climate data and its applications.</p>
+          </div>
         </div>
       </div>
-    </div>
-
+    <TwoModule :leftTitle="'D'" >
+    </TwoModule>
+    <ThreeModule/>
   </div>
 </template>
 
 <script>
 
+import TwoModule from "@/components/TwoModule.vue";
+import ThreeModule from "@/components/ThreeModule.vue";
+
 export default {
-  name: 'HomePage'
+  name: 'HomePage',
+  components: {ThreeModule, TwoModule}
 }
 </script>
 
@@ -156,9 +196,13 @@ export default {
   position: relative;
   left: 1%;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   background-color: white;
   margin:40px 0;
+}
+.word-picture-container{
+  display: flex;
+  flex-direction: row;
 }
 .word-section{
   flex:0.5;
@@ -182,4 +226,57 @@ export default {
   color: #3a5765;
 }
 
+
+.two-module {
+  display: flex;
+  flex-direction: row;
+  margin-top: 7rem;
+  margin-bottom: 7rem;
+}
+
+.module-left {
+  text-align: center;
+  width: 47%;
+  margin-right: 2%;
+  margin-left: 1%;
+}
+
+.module-right {
+  text-align: center;
+  width: 47%;
+  margin-right: 1%;
+  margin-left: 2%;
+}
+
+
+.module-title a{
+  text-align: left;
+  font-size: 1.5rem;
+  line-height: 3rem;
+  font-weight: 700;
+  text-decoration: none;
+  color: black;
+
+}
+.module-description {
+
+  text-align: left;
+  margin-bottom: 1.875rem;
+  font-size: 1.25rem;
+  line-height: 1.875rem;
+  color: rgb(46, 60, 75);
+}
+
+.module-picture {
+  object-fit: cover;
+  width: 100%;
+  height: 20rem;
+  margin-bottom: 1rem;
+}
+
+.module-picture img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
 </style>
